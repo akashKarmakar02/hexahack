@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/akash/development/hexahack/hexahack.csproj": {}
+    "/home/anirban2003/hexahack/hexahack.csproj": {}
   },
   "projects": {
-    "/home/akash/development/hexahack/hexahack.csproj": {
+    "/home/anirban2003/hexahack/hexahack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/akash/development/hexahack/hexahack.csproj",
+        "projectUniqueName": "/home/anirban2003/hexahack/hexahack.csproj",
         "projectName": "hexahack",
-        "projectPath": "/home/akash/development/hexahack/hexahack.csproj",
-        "packagesPath": "/home/akash/.nuget/packages/",
-        "outputPath": "/home/akash/development/hexahack/obj/",
+        "projectPath": "/home/anirban2003/hexahack/hexahack.csproj",
+        "packagesPath": "/home/anirban2003/.nuget/packages/",
+        "outputPath": "/home/anirban2003/hexahack/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/akash/.nuget/NuGet/NuGet.Config"
+          "/home/anirban2003/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"

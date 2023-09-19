@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace hexahack.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230919171834_updated context")]
+    partial class updatedcontext
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
@@ -208,9 +211,6 @@ namespace hexahack.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("Departmentd_code")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("TEXT");
@@ -258,9 +258,6 @@ namespace hexahack.Migrations
                     b.Property<int>("college_code")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("college_code1")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("d_code")
                         .HasColumnType("INTEGER");
 
@@ -269,8 +266,6 @@ namespace hexahack.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Departmentd_code");
-
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -278,7 +273,9 @@ namespace hexahack.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.HasIndex("college_code1");
+                    b.HasIndex("college_code");
+
+                    b.HasIndex("d_code");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -336,13 +333,17 @@ namespace hexahack.Migrations
 
             modelBuilder.Entity("hexahack.Models.Teacher", b =>
                 {
-                    b.HasOne("hexahack.Models.Department", "Department")
-                        .WithMany()
-                        .HasForeignKey("Departmentd_code");
-
                     b.HasOne("hexahack.Models.College", "College")
                         .WithMany()
-                        .HasForeignKey("college_code1");
+                        .HasForeignKey("college_code")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("hexahack.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("d_code")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("College");
 

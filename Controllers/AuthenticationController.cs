@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using hexahack.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -13,11 +14,11 @@ using Microsoft.IdentityModel.Tokens;
 [ApiController]
 public class AuthenticationController : ControllerBase
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<Teacher> _userManager;
     // private readonly JwtConfig _jwtConfig;
     private readonly IConfiguration _configuration;
 
-    public AuthenticationController(UserManager<IdentityUser> userManager, IConfiguration configuration)
+    public AuthenticationController(UserManager<Teacher> userManager, IConfiguration configuration)
     {
         _userManager = userManager;
         _configuration = configuration;
@@ -49,8 +50,9 @@ public class AuthenticationController : ControllerBase
         }
 
         // create a user
-        var new_user = new IdentityUser()
+        var new_user = new Teacher()
         {
+            TeacherName = requestDto.Name,
             Email = requestDto.Email,
             UserName = requestDto.Email,
         };
@@ -132,7 +134,7 @@ public class AuthenticationController : ControllerBase
             });
         }
 
-        var jwtToken = GenerateToken(existing_user);
+        var jwtToken = GenerateToken(existing_user!);
 
         return Ok(new AuthResult()
         {
@@ -164,7 +166,7 @@ public class AuthenticationController : ControllerBase
     }
 
 
-    private string GenerateToken(IdentityUser user)
+    private string GenerateToken(Teacher user)
     {
         var jwtTokenHandler = new JwtSecurityTokenHandler();
 

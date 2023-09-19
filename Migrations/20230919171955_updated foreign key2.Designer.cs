@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace hexahack.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230919171955_updated foreign key2")]
+    partial class updatedforeignkey2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
@@ -258,9 +261,6 @@ namespace hexahack.Migrations
                     b.Property<int>("college_code")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("college_code1")
-                        .HasColumnType("INTEGER");
-
                     b.Property<int>("d_code")
                         .HasColumnType("INTEGER");
 
@@ -278,7 +278,7 @@ namespace hexahack.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex");
 
-                    b.HasIndex("college_code1");
+                    b.HasIndex("college_code");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -342,7 +342,9 @@ namespace hexahack.Migrations
 
                     b.HasOne("hexahack.Models.College", "College")
                         .WithMany()
-                        .HasForeignKey("college_code1");
+                        .HasForeignKey("college_code")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("College");
 

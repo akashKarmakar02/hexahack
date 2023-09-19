@@ -1,4 +1,5 @@
 using System.Text;
+using hexahack.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -40,7 +41,7 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedEmail = false)
+builder.Services.AddDefaultIdentity<Teacher>(options => options.SignIn.RequireConfirmedEmail = false)
 .AddEntityFrameworkStores<AppDbContext>();
 
 

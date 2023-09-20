@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "e:\\Study\\Hackathon\\hexahack\\hexahack.csproj": {}
+    "E:\\Study\\Hackathon\\hexahack\\hexahack.csproj": {}
   },
   "projects": {
-    "e:\\Study\\Hackathon\\hexahack\\hexahack.csproj": {
+    "E:\\Study\\Hackathon\\hexahack\\hexahack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "e:\\Study\\Hackathon\\hexahack\\hexahack.csproj",
+        "projectUniqueName": "E:\\Study\\Hackathon\\hexahack\\hexahack.csproj",
         "projectName": "hexahack",
-        "projectPath": "e:\\Study\\Hackathon\\hexahack\\hexahack.csproj",
+        "projectPath": "E:\\Study\\Hackathon\\hexahack\\hexahack.csproj",
         "packagesPath": "C:\\Users\\matha\\.nuget\\packages\\",
-        "outputPath": "e:\\Study\\Hackathon\\hexahack\\obj\\",
+        "outputPath": "E:\\Study\\Hackathon\\hexahack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\matha\\AppData\\Roaming\\NuGet\\NuGet.Config"

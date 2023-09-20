@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/akash/development/hexahack/hexahack.csproj": {}
+    "e:\\Study\\Hackathon\\hexahack\\hexahack.csproj": {}
   },
   "projects": {
-    "/home/akash/development/hexahack/hexahack.csproj": {
+    "e:\\Study\\Hackathon\\hexahack\\hexahack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/akash/development/hexahack/hexahack.csproj",
+        "projectUniqueName": "e:\\Study\\Hackathon\\hexahack\\hexahack.csproj",
         "projectName": "hexahack",
-        "projectPath": "/home/akash/development/hexahack/hexahack.csproj",
-        "packagesPath": "/home/akash/.nuget/packages/",
-        "outputPath": "/home/akash/development/hexahack/obj/",
+        "projectPath": "e:\\Study\\Hackathon\\hexahack\\hexahack.csproj",
+        "packagesPath": "C:\\Users\\matha\\.nuget\\packages\\",
+        "outputPath": "e:\\Study\\Hackathon\\hexahack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/akash/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\matha\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -41,6 +41,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[7.0.11, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -96,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

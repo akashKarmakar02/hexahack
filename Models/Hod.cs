@@ -2,8 +2,10 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using hexahack.Models;
 
-namespace hexahack.Models {
-    public class Hod{
+namespace hexahack.Models
+{
+    public class Hod
+    {
         public string name { get; set; }
         [ForeignKey("Department")]
         public int d_code { get; set; } //foriegn key
